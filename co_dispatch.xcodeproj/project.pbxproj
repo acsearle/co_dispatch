@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA87B24225B03C9700190DF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA87B24125B03C9700190DF0 /* main.cpp */; };
+		CA87B24225B03C9700190DF0 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = CA87B24125B03C9700190DF0 /* main.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		CA87B23E25B03C9700190DF0 /* co_dispatch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = co_dispatch; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA87B24125B03C9700190DF0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CA87B24125B03C9700190DF0 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 		CA87B24025B03C9700190DF0 /* co_dispatch */ = {
 			isa = PBXGroup;
 			children = (
-				CA87B24125B03C9700190DF0 /* main.cpp */,
+				CA87B24125B03C9700190DF0 /* main.mm */,
 			);
 			path = co_dispatch;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA87B24225B03C9700190DF0 /* main.cpp in Sources */,
+				CA87B24225B03C9700190DF0 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,9 +239,14 @@
 		CA87B24625B03C9700190DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9DFEBF28X;
 				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fcoroutines-ts",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -249,9 +254,14 @@
 		CA87B24725B03C9700190DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9DFEBF28X;
 				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fcoroutines-ts",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
